@@ -1,0 +1,29 @@
+{% extends 'admin/slider/slider.html.twig' %}
+{% block menugenerate %}
+
+
+    {% for slider in sliders %}
+        <a href="/admin/slider/show/{{ slider.id }}" class="list-group-item list-group-item-action">Слайд {{ loop.index0 + 1 }}</a>
+    {% endfor %}
+    <a href="/admin/slider/add" class="list-group-item list-group-item-action active">
+        Добавить новый слайд
+    </a>
+{% endblock %}
+{% block main %}
+
+            <h3>Настройка слайдов</h3>
+            <h1>Добавление нового Слайда</h1>
+
+            {{ form_start(form) }}
+            {# ... #}
+
+            {{ form_row(form.image) }}
+            {{ form_end(form) }}
+
+            <a href="{{ slider.image }}">Ссылка на изображения</a>
+
+
+
+
+
+{% endblock %}

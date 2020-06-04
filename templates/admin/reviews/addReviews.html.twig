@@ -1,0 +1,41 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <h1>Добавить отзыв</h1>
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+
+            </div>
+            <input id="nameRev" type="text" class="form-control" placeholder="Имя, кто прислал отзыв" aria-label="Имя пользователя" aria-describedby="basic-addon1">
+        </div>
+        <br>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Текст отзыва</span>
+            </div>
+            <textarea id="rev" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+        <br>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Текст ответа</span>
+            </div>
+            <textarea id="ans" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+<button onclick="addsendreviews()" type="button">Отправить</button>
+    </div>
+
+{% endblock %}
+{% block button %}
+{#    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">#}
+{#        <h1 class="h2"></h1>#}
+{#        <div class="btn-toolbar mb-2 mb-md-0">#}
+{#            <div class="btn-group mr-2">#}
+{#                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/reviews{{ review.id }}">Удалить</a>#}
+{#                </button>#}
+{#            </div>#}
+
+{#        </div>#}
+
+{#    </div>#}
+{% endblock %}

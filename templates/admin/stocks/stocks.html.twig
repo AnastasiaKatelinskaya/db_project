@@ -1,0 +1,53 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row">
+        {% if stocks is defined %}
+            {% for stock in stocks %}
+                <div class="card h-100">
+                    <div style="height: 250px; position: relative; overflow: hidden; padding: 5px;"
+                         class="media">
+                        <img src="{{ stock.image }}"
+                             class="card-img-top align-self-center"
+                             style="max-height: 100%; object-fit: scale-down; margin: 0 auto;"
+                             alt="...">
+                    </div>
+                    <div class="card-body">
+
+                        <h4 class="card-title text-center">{{ stock.title }}</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p>{{ stock.content }}</p>
+                        </li>
+                    </ul>
+                    <div>
+
+                        <a href="/admin/deletestocks/{{ stock.id }}">
+                            <button class="btn btn-primary card_button right_card_button"
+                                    type="submit">
+                                Удалить
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            Извините, у Вас еще нет отзывов.
+        {% endif %}
+    </div>
+
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/addstocks/">Добавить</a>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

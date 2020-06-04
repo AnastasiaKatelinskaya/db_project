@@ -1,0 +1,114 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Наименование: {{ product.title }}</h5>
+                    <p class="card-text">Описание: {{ product.content }}</p>
+
+                    {% if attributes is defined %}
+                        {% for attribute in attributes %}
+                            <div class="col-12 attributes_product clear">
+                                <span class="align-middle"><a
+                                            href="/admin/products/deleteAttr/{{ attribute.id }}}">Удалить</a></span>
+
+                                <span class="align-middle">{{ attribute.title }} - {{ attribute.value }} руб</span>
+                                <div class=" position_right number-input align-middle ">
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                    <input class="quantity" min="0" name="quantity1" value="0" type="number">
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"></button>
+                                </div>
+
+
+                            </div>
+
+
+
+                        {% endfor %}
+                    {% else %}
+                        Нет вариантов товара!
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-6">
+            <h3>Изменение информации</h3>
+            {{ form_start(formProduct) }}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Загрузить</span>
+                </div>
+                <div class="custom-file">
+                    {{ form_row(formProduct.image, {attr: {class: 'custom-file-input'} }) }}
+                    {#                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">#}
+                    <label class="custom-file-label" for="inputGroupFile01">{{ product.image }}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Название</label>
+                {{ form_row(formProduct.name, {attr: {class: 'form-control', value: product.title} }) }}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Категория</label>
+                {{ form_row(formProduct.categories, {attr: {class: 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Описание</label>
+                {#                <textarea id="products_content" name="content" required="required" class="form-control" >{{ products.content }}</textarea>#}
+                {{ form_row(formProduct.content, {attr: {class: 'form-control'} }) }}
+            </div>
+            <div class="form-group form-check">
+                {{ form_row(formProduct.isLeader, {attr: {class: 'form-check-input'} }) }}
+                <label class="form-check-label" for="exampleCheck1">Лидер продаж</label>
+            </div>
+            <div class="form-group form-check">
+                {{ form_row(formProduct.isspecialOffer, {attr: {class: 'form-check-input'} }) }}
+                <label class="form-check-label" for="exampleCheck1">Спецпредложение </label>
+            </div>
+            <div class="form-group form-check">
+                {{ form_row(formProduct.isNewItem, {attr: {class: 'form-check-input'} }) }}
+                <label class="form-check-label" for="exampleCheck1">Новинка</label>
+            </div>
+
+
+            {{ form_row(formProduct.submit, {attr: {class: 'btn btn-primary'} }) }}
+            {{ form_end(formProduct) }}
+
+            <div class="input-group">
+                <p>В поле атрибутов товара добавьте отличительные характеристики и введите стоимость</p>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Описание и цена</span>
+                </div>
+                {{ form_start(formAttribute) }}
+                {{ form_row(formAttribute.title, {attr: {class: 'form-control'} }) }}
+                {{ form_row(formAttribute.value, {attr: {class: 'form-control'} }) }}
+                {{ form_row(formAttribute.submit, {attr: {class: 'btn btn-primary'} }) }}
+                {{ form_end(formAttribute) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/products/addProducts">Добавить</a>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Изменить</button>
+            </div>
+            <button type="button" class="btn btn-outline-danger"><a href="/admin/products/delete/{{ product.id }}">Удалить</a>
+            </button>
+
+        </div>
+
+    </div>
+{% endblock %}

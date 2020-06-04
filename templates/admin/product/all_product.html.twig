@@ -1,0 +1,35 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+        {% if products is defined %}
+            {% for product in products %}
+                <div class="card" style="padding: 5px">
+                    <img src="{{ product.image }}" class="card-img-top all_prod_images" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <p class="card-text">{{ product.content }}</p>
+{#                        <p class="card-text">{{ product.price }}</p>#}
+                        <a href="/admin/product/show/{{ product.id }}" class="btn btn-primary">Перейти</a>
+                    </div>
+                </div>
+
+
+            {% endfor %}
+        {% else %}
+            Извините, у нас временно нет продуктов данной категории.
+        {% endif %}
+    </div>
+
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/product/add">Добавить</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

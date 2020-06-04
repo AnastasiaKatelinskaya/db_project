@@ -1,0 +1,36 @@
+
+{% if baskets is defined %}
+    {% for basket in baskets %}
+
+        <div class="card_product_item row">
+            <div class="card_product_img_div col-sm-4 col-12">
+                <img src="{{ basket.attribute.product.image }}" class="card_product_img">
+            </div>
+            <div class="col-sm-8 col-12 card_right_block">
+                <a onClick="getdelate({{ basket.id }})"><img src="/img/delete.png"
+                                                              class="delete_card_product_item"></a>
+
+                <a href="/product/show/{{ basket.attribute.product.id }}"><h6>{{ basket.attribute.product.title }}</h6></a>
+
+                <div class="col-12 card_item_attributed clear">
+
+                    <span class="align-middle">{{ basket.attribute.title }} - {{ basket.attribute.value }} руб</span>
+                    <div class=" position_right number-input align-middle ">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); setPostBasket(this.parentNode.querySelector('input[type=number]').name,this.parentNode.querySelector('input[type=number]').value)"></button>
+                        <input class="quantity" min="0"
+                               onchange="setPostBasket(this.parentNode.querySelector('input[type=number]').name,this.value);"
+                               name="quantity{{ basket.attribute.id }}"
+                               value={{ basket.quantity }}
+                               type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); setPostBasket(this.parentNode.querySelector('input[type=number]').name,this.parentNode.querySelector('input[type=number]').value)"
+                                class="plus"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+{% else %}
+    Ваша корзина пуста, пожалуйста добавьте товары!
+{% endif %}

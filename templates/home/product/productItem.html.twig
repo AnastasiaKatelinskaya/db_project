@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container row" style="margin: 0 auto; padding: 50px 5px;">
+        <div class="col-12 col-md-6">
+            <div class="product_slick" style="border: solid #d6d6e4 1px;">
+
+                <a data-fancybox="gallery" href="{{ products.image }}"><img style="width: 100%;
+    object-fit: contain;
+    max-height: 300px;" src="{{ products.image }}"></a></div>
+
+
+        </div>
+
+        <div class="col-12 col-md-6">
+            <h2 style="margin-top: 20px">{{ products.title }}</h2>
+            <hr>
+            <p><b>{{ products.content }}</b><br>
+                <br><br>
+            <hr>
+
+
+            {% if attributes %}
+                Варианты товара:<br>
+
+            {% else %}
+                <h4>Пожалуйста свяжитесь с представителем компании для уточнения стоимости</h4>
+            {% endif %}
+
+            {% if attributes is defined  %}
+
+            <form method="post" onsubmit="postBasket()"  name="basket" id="basket_product">
+                    {% for attribute in attributes %}
+                        <div class="col-12 attributes_product clear">
+                            <span class="align-middle">{{ attribute.title }} - {{ attribute.value }} руб</span>
+                            <div class=" position_right number-input align-middle ">
+                                <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                <input class="quantity" min="0" name="quantity{{ attribute.id }}" value="0"
+                                       type="number">
+                                <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                        class="plus"></button>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                {% if attributes %}
+                    <button id="basket_"  type="submit" class="add_card_product_item">Добавить в корзину</button>
+                {% endif %}
+
+
+
+                {% endif %}
+                {#                <input type="submit" value="090">#}
+
+                {#                <button onclick="setPostBasketProductItem()"  type="button"  >Добавить в корзину</button>#}
+            </form>
+        </div>
+    </div>
+
+    <div class="container-fluid main_page_product_category">
+        <div class="main_page_product_category_title text-center">
+            <h1>С этим товаром покупают:</h1>
+        </div>
+        <hr>
+        <div class="responsive" style="display: flex; height: 100%">
+            {% if products_recommend is defined %}
+                {% for product in products_recommend %}
+                    <div style="position: relative; display: flex; height: 100%">
+                        <div class="card h-100">
+                            <div style="height: 250px; position: relative; overflow: hidden; padding: 5px;"
+                                 class="media">
+                                <img src="{{ product.image }}" class="card-img-top align-self-center"
+                                     style="max-height: 100%; object-fit: scale-down; margin: 0 auto;" alt="...">
+                            </div>
+                            <div class="card-body">
+                                {% if product.newItem == true %}
+                                    <span class="badge badge-warning">Новинка</span>
+                                {% endif %}
+                                {% if product.leader == true %}
+                                    <span class="badge badge-success">Лидер продаж</span>
+                                {% endif %}
+                                {% if product.specialOffers == true %}
+                                    <span class="badge badge-primary">Спецпредложение</span>
+                                {% endif %}
+
+                                {#                            <span class="badge badge-danger">Скидка</span>#}
+
+                                <h5 class="card-title">{{ product.title }}</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+
+                                    <span class="main_page_product_categor_price">{% if product.price == 0 %}
+                                        Цена не указана
+                                        {% else %}
+                                            От {{ product.price }} руб.
+                                        {% endif %}</span>
+                                </li>
+                            </ul>
+                            <div>
+
+                                <a href="/product/show/{{ product.id }}">
+                                    <button class="btn btn-primary card_button right_card_button" type="submit">
+                                        Подробнее
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                Извините, у нас временно нет продуктов данной категории.
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
+

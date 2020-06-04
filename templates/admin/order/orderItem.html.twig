@@ -1,0 +1,52 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Наименование</th>
+                <th scope="col">Модель</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Стоимость</th>
+                <th scope="col">Общая стоимость</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set sum = 0 %}
+            {% for order in orders.product %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{order.product.title}}</td>
+                <td>{{order.attribute.title}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.attribute.price}}</td>
+                <td>{% set sum = sum + order.attribute.price * order.quantity %}{{order.attribute.price * order.quantity}}</td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+        <h3>Итого: {{ sum }} рублей</h3>
+
+
+
+    </div>
+
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/products/addProducts">Добавить</a>
+                </button>
+            </div>
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/excel/{{orders.id}}">Excel</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

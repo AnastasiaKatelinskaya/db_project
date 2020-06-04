@@ -1,0 +1,1802 @@
+{% extends 'base.html.twig' %}
+
+{% block wholesalePrice %}
+    <div class="container text-center" style="margin-bottom: 40px;">
+        <h2 class="wholesale_title">ОПТОВЫЙ ПРАЙС-ЛИСТ</h2>
+        <a type="button" class="btn btn-primary btn-lg download_button download_price_list_button"
+           href="/uploads/documents/price.doc"
+           download>
+            Скачать оптовый прайс
+            <img style="width: 30px;" src="/img/download-png.png">
+        </a>
+
+        <h5>Приглашаем к сотрудничеству оптовиков.</h5>
+        <p style="text-align: justify; max-width: 600px; margin: 20px auto;">
+            Оплата возможна любым способом.
+            Доставка и сроки изготовления обговариваются индивидуально.
+            Наш ассортимент постоянно пополняется и представлен на сайте.
+            Ваши запросы отправляйте на e-mail, либо звоните.
+        </p>
+        <b>Телефон:</b> +79177129427, +79877020829, +79371191767<br>
+        <b>E-mail:</b> maximus13k@rambler.ru<br>
+        <b>Фактический адрес:</b> 424000 г.Йошкар-Ола, ул. Пугачева д.1<br>
+    </div>
+
+    <h5 class="text-center">Двери глухие и остекленные</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ДО-1; 2; 3; 4 (сорт А)</td>
+            <td>2400</td>
+        </tr>
+        <tr>
+            <td>ДО-5</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>ДО-6; ДО-7</td>
+            <td>2600</td>
+        </tr>
+        <tr>
+            <td>ДГ-1; 2; 3; 4; 5; 6; 7; 8; 9 (сорт А)</td>
+            <td>2200</td>
+        </tr>
+        <tr>
+            <td>ДО-11; 12; 13; 14; 15</td>
+            <td>3300</td>
+        </tr>
+        <tr>
+            <td>ДГ-11; 12; 13; 14; 15; 16 (сорт А)</td>
+            <td>2900</td>
+        </tr>
+        <tr>
+            <td>ДГ-11; 12; 13; 14; 15; 16 (сорт B)</td>
+            <td>2600</td>
+        </tr>
+        <tr>
+            <td>ДГ-1; 2; 3; 4; 5; 6; 7; 8; 9 (сорт В)</td>
+            <td>1900</td>
+        </tr>
+        <tr>
+            <td>ДГ-1; 2; 3; 4 (сорт C)</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>ДГ игольчатая, хвоя (сорт В)</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>ДГ игольчатая, хвоя (сорт А)</td>
+            <td>3200</td>
+        </tr>
+        <tr>
+            <td>Дверь игольчатая, хвоя с наличником</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Дверь игольчатая, хвоя без наличника</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>Дверь под старину (Браширование)</td>
+            <td>7000</td>
+        </tr>
+        <tr>
+            <td>Н-1; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12; 13; 14; 15 (сорт А)</td>
+            <td>2600</td>
+        </tr>
+        <tr>
+            <td>Н-16; 17; 18; 19; 20 (сорт А)</td>
+            <td>2800</td>
+        </tr>
+        <tr>
+            <td>Н-21; 23 (сорт А)</td>
+            <td>2700</td>
+        </tr>
+        <tr>
+            <td>Н-2; 22; 24; 25; 26; 27; 28 (сорт А)</td>
+            <td>2900</td>
+        </tr>
+        <tr>
+            <td>Н-29; 30; 31; 32; 33; 34; 35; 36; 37; 38; 39 (сорт А)</td>
+            <td>3600</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Двери резные</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ДР-1; 2; 3; 4; 5</td>
+            <td>5700</td>
+        </tr>
+        <tr>
+            <td>ДР-6</td>
+            <td>5300</td>
+        </tr>
+        <tr>
+            <td>ДР-7 (с резным орнаментом)</td>
+            <td>2800</td>
+        </tr>
+        <tr>
+            <td>ДР-8 (Надежда) с притвором и глубокой резьбой</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>ДР-9 (игольчатая) с глубокой резьбой</td>
+            <td>6700</td>
+        </tr>
+        <tr>
+            <td>ДР-9М (игольчатая) с глубокой резьбой</td>
+            <td>7700</td>
+        </tr>
+        <tr>
+            <td>ДР-9П (игольчатая) с глубокой резьбой</td>
+            <td>7200</td>
+        </tr>
+        <tr>
+            <td>ДР-9Л(игольчатая)с глубокой резьбой</td>
+            <td>7700</td>
+        </tr>
+        <tr>
+            <td>ДР-10 (игольчатая) с глубокой резьбой</td>
+            <td>6700</td>
+        </tr>
+        <tr>
+            <td>ДР-11; 12</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>ДР-13; 14</td>
+            <td>3800</td>
+        </tr>
+        <tr>
+            <td>ДР-15; 16; 17; 18; 19; 20</td>
+            <td>3200</td>
+        </tr>
+        <tr>
+            <td>ДР-21; 22; 23</td>
+            <td>3600</td>
+        </tr>
+        <tr>
+            <td>ДР-24</td>
+            <td>3200</td>
+        </tr>
+        <tr>
+            <td>ДР-25; 26</td>
+            <td>4500</td>
+        </tr>
+        <tr>
+            <td>ДРБ-1; 2; 3</td>
+            <td>2600</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Двери Термо</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ДР-Л1, М1 (Термо игольчатая)</td>
+            <td>9000</td>
+        </tr>
+        <tr>
+            <td>ДР-П1; 2 (Термо игольчатая)</td>
+            <td>8500</td>
+        </tr>
+        <tr>
+            <td>Дверь Термо игольчатая</td>
+            <td>6500</td>
+        </tr>
+        <tr>
+            <td>Двери из термополока липа
+                ДГ-12, 13Т, 15Т, ДО-11Т, 13Т
+            </td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>ДО–2Т; 3Т; 7Т; 8Т липа</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>ДГ–1Т липа</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>ДР-22Т; 23Т липа</td>
+            <td>4600</td>
+        </tr>
+        <tr>
+            <td>ДР-БЛ, ДР-БМ Термо береза</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>ДГ-12, 13, 15 БТ Термо береза</td>
+            <td>5200</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center ">Мебель для бани и сауны</h5>
+    <table class="table table-bordered table-hover table-sm p-0 price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Выс</th>
+            <th scope="col">Шир</th>
+            <th scope="col">Дл</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="8">Лавка простая</td>
+            <td>450</td>
+            <td>400</td>
+            <td>1000</td>
+            <td>1100</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1100</td>
+            <td>1150</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1200</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1300</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1400</td>
+            <td>1300</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1500</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1600</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>400</td>
+            <td>1700</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td rowspan="7">Стол</td>
+            <td>750</td>
+            <td>620</td>
+            <td>1000</td>
+            <td>1300</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1100</td>
+            <td>1350</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1200</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1300</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1400</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1500</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>750</td>
+            <td>620</td>
+            <td>1600</td>
+            <td>1900</td>
+        </tr>
+        <tr>
+            <td>Табурет</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Лавка из полога</td>
+            <td>250</td>
+            <td>310</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Лавка малая М-12</td>
+            <td>250</td>
+            <td>310</td>
+            <td>600</td>
+            <td>650</td>
+        </tr>
+        <tr>
+            <td>Лавка средняя</td>
+            <td>350</td>
+            <td>310</td>
+            <td>700</td>
+            <td>700</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Лавка средняя из полога М-04</td>
+            <td>350</td>
+            <td>310</td>
+            <td>800</td>
+            <td>750</td>
+        </tr>
+        <tr>
+            <td>350</td>
+            <td>310</td>
+            <td>900</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td rowspan="7">Лавка из полога</td>
+            <td>450</td>
+            <td>310</td>
+            <td>1000</td>
+            <td>1050</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1100</td>
+            <td>1100</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1200</td>
+            <td>1150</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1300</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1400</td>
+            <td>1350</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1500</td>
+            <td>1450</td>
+        </tr>
+        <tr>
+            <td>450</td>
+            <td>310</td>
+            <td>1600</td>
+            <td>1550</td>
+        </tr>
+        <tr>
+            <td>Ящик для белья М05</td>
+            <td>400</td>
+            <td>300</td>
+            <td>600</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>Кресло М-10</td>
+            <td>800</td>
+            <td>500</td>
+            <td>600</td>
+            <td>1050</td>
+        </tr>
+        <tr>
+            <td>Кресло</td>
+            <td>800</td>
+            <td>500</td>
+            <td>700</td>
+            <td>1100</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Скамейка с подлокотником М-08</td>
+            <td>800</td>
+            <td>500</td>
+            <td>1000</td>
+            <td>1350</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1100</td>
+            <td>1450</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1200</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1300</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1400</td>
+            <td>1650</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1500</td>
+            <td>1750</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Скамейка со спинкой</td>
+            <td>800</td>
+            <td>500</td>
+            <td>1000</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1100</td>
+            <td>1350</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1200</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1300</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1400</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1500</td>
+            <td>1700</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Скамья парковая</td>
+            <td>800</td>
+            <td>500</td>
+            <td>1000</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1100</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1200</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>1300</td>
+            <td>1700</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">Стол раскладной</td>
+            <td>-</td>
+            <td>-</td>
+            <td>1000</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>1100</td>
+            <td>1450</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>1200</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>1300</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>1400</td>
+            <td>1700</td>
+        </tr>
+        <tr>
+            <td>Лежак Термо</td>
+            <td>-</td>
+            <td>-</td>
+            <td>1000 - 1400</td>
+            <td>2500 - 2900</td>
+        </tr>
+        <tr>
+            <td>Лавка 3П термо</td>
+            <td>-</td>
+            <td>-</td>
+            <td>1000 - 1400</td>
+            <td>1600 - 2000</td>
+        </tr>
+        <tr>
+            <td>Лавка 4П термо</td>
+            <td>-</td>
+            <td>-</td>
+            <td>1000 - 1400</td>
+            <td>1700 - 2100</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Шезлонг жесткий</td>
+            <td>-</td>
+            <td>600</td>
+            <td>-</td>
+            <td>1150</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>700</td>
+            <td>-</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>800</td>
+            <td>-</td>
+            <td>1350</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Шезлонг мягкий</td>
+            <td>-</td>
+            <td>600</td>
+            <td>-</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>700</td>
+            <td>-</td>
+            <td>1550</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>800</td>
+            <td>-</td>
+            <td>1650</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Стул</td>
+            <td>800</td>
+            <td>500</td>
+            <td>500</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>500</td>
+            <td>600</td>
+            <td>900</td>
+        </tr>
+        <tr>
+            <td rowspan="7">Оконный блок из липы с фурнитурой (Стеклопакет)</td>
+            <td>-</td>
+            <td>30</td>
+            <td>30</td>
+            <td>850</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>40</td>
+            <td>40</td>
+            <td>900</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>40</td>
+            <td>50</td>
+            <td>950</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>50</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>60</td>
+            <td>1150</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>70</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>60</td>
+            <td>60</td>
+            <td>1250</td>
+        </tr>
+        <tr>
+            <td rowspan="8">Оконный блок из Термодревесины с фурнитурой (Стеклопакет)</td>
+            <td>-</td>
+            <td>30</td>
+            <td>30</td>
+            <td>1400</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>30</td>
+            <td>40</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>40</td>
+            <td>40</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>40</td>
+            <td>50</td>
+            <td>1700</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>50</td>
+            <td>1800</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>60</td>
+            <td>1900</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>50</td>
+            <td>70</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>60</td>
+            <td>60</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Табличка с 3-мя крючками (рис)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>650</td>
+        </tr>
+        <tr>
+            <td>Табличка средняя</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Табл «ВЕНИК»</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>550</td>
+        </tr>
+        <tr>
+            <td>Табл «ВЕНИК»</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>650</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Отделочные материалы</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Цена/кв.м</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="3">Стеновой паркет</td>
+            <td>Кат «А»</td>
+            <td>620</td>
+        </tr>
+        <tr>
+            <td>Кат «В»</td>
+            <td>520</td>
+        </tr>
+        <tr>
+            <td>Кат «C»</td>
+            <td>420</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Аксессуары для бань и саун</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Вешалка простая А05- 6 крючков</td>
+            <td>230</td>
+        </tr>
+        <tr>
+            <td>Вешалка простая А05- 4 крючка</td>
+            <td>210</td>
+        </tr>
+        <tr>
+            <td>Вешалка-ступень А06- 7 крючков</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Вешалка простая А06- 5 крючков</td>
+            <td>270</td>
+        </tr>
+        <tr>
+            <td>Вешалка угловая А-07</td>
+            <td>570</td>
+        </tr>
+        <tr>
+            <td>Вешалка прямая А-08</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Вешалка (МММ)</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>Вешалка 0212</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td>Полка вешалка А-09</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>Полка 1-ярусная А-10</td>
+            <td>280</td>
+        </tr>
+        <tr>
+            <td>Полка 2-ярусная</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td>Полка угловая</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>Полка «Бабочка»</td>
+            <td>260</td>
+        </tr>
+        <tr>
+            <td>Абажур малый А-13</td>
+            <td>230</td>
+        </tr>
+        <tr>
+            <td>Абажур средний А-12</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>Абажур круглый</td>
+            <td>230</td>
+        </tr>
+        <tr>
+            <td>Абажур 2014</td>
+            <td>280</td>
+        </tr>
+        <tr>
+            <td>Абажур косой настенный</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Абажур косой угловой</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Абажур круглый настенный</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Абажур круглый угловой</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Абажур факел настенный</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Абажур факел угловой</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Ручки дверные А-14-16 Комплект(2шт)</td>
+            <td>120/2шт</td>
+        </tr>
+        <tr>
+            <td>Ручки капельки Комплект(2шт)</td>
+            <td>170/2шт</td>
+        </tr>
+        <tr>
+            <td>Ручки резные Комплект(2шт)</td>
+            <td>170/2шт</td>
+        </tr>
+        <tr>
+            <td>Подголовник жёсткий</td>
+            <td>270</td>
+        </tr>
+        <tr>
+            <td>Подголовник мягкий</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td>Слани (решётка напольная)</td>
+            <td>700/кв.м</td>
+        </tr>
+        <tr>
+            <td>Решётка вентиляционная Малая</td>
+            <td>280</td>
+        </tr>
+        <tr>
+            <td>Решётка вентиляционная Средняя</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Решётка вентиляционная Большая</td>
+            <td>330</td>
+        </tr>
+        <tr>
+            <td>Полка для обуви</td>
+            <td>600</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Бондарные изделия</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Объем</th>
+            <th scope="col">Цена</th>
+            <th scope="col">С крышкой</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="2">Ушат</td>
+            <td>3л</td>
+            <td>350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>5л</td>
+            <td>400</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Шайка</td>
+            <td>10л</td>
+            <td>570</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>680</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Запарник</td>
+            <td>8л</td>
+            <td>550</td>
+            <td>620</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>700</td>
+            <td>770</td>
+        </tr>
+        <tr>
+            <td>25л</td>
+            <td>880</td>
+            <td>950</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Запарник со вставкой</td>
+            <td>9л</td>
+            <td>730</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>800</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>18л</td>
+            <td>830</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Ведро</td>
+            <td>8л</td>
+            <td>580</td>
+            <td>650</td>
+        </tr>
+        <tr>
+            <td>18л</td>
+            <td>800</td>
+            <td>870</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Кружка</td>
+            <td>0.5л</td>
+            <td>250</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>0.7л</td>
+            <td>270</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>1л</td>
+            <td>280</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Ковш</td>
+            <td>0.3л</td>
+            <td>240</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>0.5л</td>
+            <td>260</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>1л</td>
+            <td>280</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">Кадка с гнетом</td>
+            <td>15л</td>
+            <td>800</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>25л</td>
+            <td>950</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>35л</td>
+            <td>1000</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>55л</td>
+            <td>1050</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>85л</td>
+            <td>1300</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Шайка с пластиковой вставкой</td>
+            <td>6л</td>
+            <td>620</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>10л</td>
+            <td>720</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>800</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Ведро с пластиковой вставкой</td>
+            <td>5л</td>
+            <td>500</td>
+            <td>570</td>
+        </tr>
+        <tr>
+            <td>10л</td>
+            <td>690</td>
+            <td>760</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>780</td>
+            <td>850</td>
+        </tr>
+        <tr>
+            <td>18л</td>
+            <td>830</td>
+            <td>900</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Овал</td>
+            <td>15л</td>
+            <td>680</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>20л</td>
+            <td>780</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>30л</td>
+            <td>890</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Русский душ со вставк.</td>
+            <td>18л</td>
+            <td>2000</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>1850</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Ведро с пластиковой вставкой Зебра Термо</td>
+            <td>9л</td>
+            <td>770</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>820</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Запарник с пластиковой вставкой Зебра Термо</td>
+            <td>9л</td>
+            <td>790</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>820</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>18л</td>
+            <td>880</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка с пластиковой вставкой Зебра Термо</td>
+            <td>10л</td>
+            <td>800</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>840</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка с пластиковой вставкой Термо</td>
+            <td>10л</td>
+            <td>900</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>950</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Запарник с пластиковой вставкой Термо</td>
+            <td>9л</td>
+            <td>890</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>13л</td>
+            <td>930</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>18л</td>
+            <td>980</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td>Русский душ с пластиковой вставкой Зебра, термо</td>
+            <td>18л</td>
+            <td>2300</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Ковш Зебра Термо</td>
+            <td>0.3л</td>
+            <td>340</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>0.5л</td>
+            <td>360</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>1.0л</td>
+            <td>380</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Овал Зебра Термо</td>
+            <td>15л</td>
+            <td>700</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>20л</td>
+            <td>800</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>30л</td>
+            <td>910</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Запарник с нержавеющей вставкой Зебра Термо</td>
+            <td>8л</td>
+            <td>1300</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12л</td>
+            <td>1500</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1550</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>20л</td>
+            <td>1800</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Ведро с нержавеющей вставкой Зебра Термо</td>
+            <td>8л</td>
+            <td>1300</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12л</td>
+            <td>1500</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1550</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка с нержавеющей вставкой Зебра Термо</td>
+            <td>10л</td>
+            <td>1300</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12.5л</td>
+            <td>1500</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка глубокая с нержавеющей вставкой Зебра Термо</td>
+            <td>9л</td>
+            <td>1350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1700</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Запарник с нержавеющей вставкой Термо</td>
+            <td>8л</td>
+            <td>1350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12л</td>
+            <td>1550</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1600</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>20л</td>
+            <td>1850</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Ведро с нержавеющей вставкой Термо</td>
+            <td>8л</td>
+            <td>1350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12л</td>
+            <td>1550</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1600</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка с нержавеющей вставкой Термо</td>
+            <td>10л</td>
+            <td>1350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>12.5л</td>
+            <td>1550</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Шайка глубокая с нержавеющей вставкой Термо</td>
+            <td>9л</td>
+            <td>1400</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>15л</td>
+            <td>1750</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Резные изделия</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Резная табличка: Р-5</td>
+            <td>450</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Мебель для дома и дачи</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col"></th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="3">Cтолы и скамейки (липа) : (Длина 1400 мм)</td>
+            <td>Стол</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Скамейка</td>
+            <td>1750</td>
+        </tr>
+        <tr>
+            <td>Комплект (Стол и 2 скамейки)</td>
+            <td>6000</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Кровати детские</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Цена/шт</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Кровать детская, в оригинальном исполнении (без матраса)</td>
+            <td>6000</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5 class="text-center">Погонажные изделия</h5>
+    <table class="table table-bordered table-hover table-sm price_table">
+        <thead>
+        <tr>
+
+            <th scope="col">Название</th>
+            <th></th>
+            <th scope="col">Цена/погонный метр</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="13">Вагонка евро (липа) : (88 мм\15 мм)</td>
+            <td colspan="2">Категория «Экстра»</td>
+        </tr>
+        <tr>
+            <td>2,0-3,0 м</td>
+            <td>76</td>
+        </tr>
+        <tr>
+            <td>1,8-1,9 м</td>
+            <td>55</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>0.5-0,9 м</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «А»</td>
+        </tr>
+        <tr>
+            <td>2,0-3,0 м</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <td>1,8-1,9 м</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>0.5-0,9 м</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «В»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>25</td>
+        </tr>
+
+        <tr>
+            <td rowspan="13">Полок (липа) : (90мм\26 мм)</td>
+            <td colspan="2">Категория «Экстра»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>135</td>
+        </tr>
+        <tr>
+            <td>1,0-1,4 м</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>1,5-1,7 м</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>0.5-0,9 м</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «А»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>1,0-1,4 м</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>1,5-1,7 м</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>0.5-0,9 м</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «В»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>40</td>
+        </tr>
+
+        <tr>
+            <td rowspan="10">Полок Термо Липа</td>
+            <td colspan="2">Розничная цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>215</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>145</td>
+        </tr>
+        <tr>
+            <td>0,5-0,9 м</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>0,3-0,4 м</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td colspan="2">Оптовая цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>175</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>125</td>
+        </tr>
+        <tr>
+            <td>0,5-0,9 м</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>0,3-0,4 м</td>
+            <td>40</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">Вагонка Термо Липа</td>
+            <td colspan="2">Розничная цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td colspan="2">Оптовая цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>70</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">Полок Термо Береза</td>
+            <td colspan="2">Розничная цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>220</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>165</td>
+        </tr>
+        <tr>
+            <td colspan="2">Оптовая цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>190</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>145</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">Вагонка Термо Береза</td>
+            <td colspan="2">Розничная цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td colspan="2">Оптовая цена</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>105</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>75</td>
+        </tr>
+
+        <tr>
+            <td rowspan="8">Вагонка евро (осина) : (88 мм\15 мм)</td>
+            <td colspan="2">Категория «Экстра»</td>
+        </tr>
+        <tr>
+            <td>2,0-3,0 м</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>1,8-1,9 м</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>37</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «А»</td>
+        </tr>
+        <tr>
+            <td>2,0-3,0 м</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>1,8-1,9 м</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>30</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">Полок (осина) : (90мм\26 мм)</td>
+            <td colspan="2">Категория «Экстра»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td colspan="2">Категория «А»</td>
+        </tr>
+        <tr>
+            <td>1,8-3,0 м</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>1,0-1,7 м</td>
+            <td>65</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Наличник : (70 мм\15 мм)</td>
+            <td>Категория «Экстра»</td>
+            <td>55</td>
+        </tr>
+        <tr>
+            <td>Категория «А»</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>Наличник термо</td>
+            <td>80</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Плинтус большой (45 мм\15мм)</td>
+            <td>Категория «Экстра» (1,8 – 3 м)</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Категория «А» (1,8 – 3 м)</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Плинтус термо</td>
+            <td>40</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Плинтус малый (30 мм\15мм)</td>
+            <td>Категория «Экстра» (1,8 – 3 м)</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Категория «А» (1,8 – 3 м)</td>
+            <td>20</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Уголок(1,8 – 3 м)</td>
+            <td>Категория «Экстра»</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Категория «А»</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Уголок термо</td>
+            <td>50</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Грибок (1,8 – 3 м)</td>
+            <td>Категория «Экстра»</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Категория «А»</td>
+            <td>20</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Нащельник (1,8 – 3 м)</td>
+            <td>Категория «Экстра»</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Категория «А»</td>
+            <td>20</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+{% endblock %}

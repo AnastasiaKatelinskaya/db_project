@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body1 %}
+
+    <div class="container">
+        <h2>Отзывы</h2>
+        {% if reviews is defined %}
+            {% for review in reviews %}
+
+                <h4>{{ review.titleName }}</h4>
+                <p>{{ review.content }}</p>
+                <div class="answer">
+                    <h4>Все для бани</h4>
+                    <p>{{ review.answer }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        {% else %}
+            Извините, у нас еще нет отзывов.
+        {% endif %}
+
+    </div>
+{% endblock %}

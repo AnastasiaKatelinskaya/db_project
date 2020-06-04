@@ -1,0 +1,49 @@
+{% extends 'admin/slider/slider.html.twig' %}
+{% block menugenerate %}
+    {% if sliders is defined %}
+
+    {% for slider in sliders %}
+        <a href="{{ slider.id }}" class="list-group-item list-group-item-action">Слайд {{ loop.index0 + 1 }}</a>
+    {% endfor %}
+    {% else %}
+        Извините, у нас временно нет новостей.
+    {% endif %}
+    <a href="/admin/slider/add" class="list-group-item list-group-item-action active">
+        Добавить новый слайд
+    </a>
+
+{% endblock %}
+{% block main %}
+{#    <div id="myCarousel" class="carousel slide main_top_slider" data-ride="carousel">#}
+{#        <ol class="carousel-indicators">#}
+{#            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>#}
+{#        </ol>#}
+{#        <div class="carousel-inner">#}
+{#            <div class="carousel-item active">#}
+{#                <img src="{{sliderItem.image}}" class="bd-placeholder-img">#}
+{#                <div class="container">#}
+{#                    <div class="carousel-caption text-left">#}
+{#                        <h1>Акция</h1>#}
+{#                        <p>{{ sliderItem.content }}</p>#}
+{#                        <p><a class="btn btn-lg btn-primary slider_btn" href="{{ sliderItem.link }}" role="button">{{ sliderItem.textLink }}</a>#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/slider/add">Добавить</a></button>
+
+            </div>
+{#            <button type="button" class="btn btn-outline-danger"><a href="/admin/slider/delete/{{ sliderItem.id }}">Удалить</a></button>#}
+
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row">
+        {% if reviews is defined %}
+            {% for review in reviews %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Отзыв {{ review.id }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ review.titleName }}</h6>
+                        <p class="card-text">{{ review.content }}</p>
+                        <a href="/admin/reviews/{{ review.id }}" class="card-link">Перейти</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            Извините, у Вас еще нет отзывов.
+        {% endif %}
+    </div>
+
+{% endblock %}
+{% block button %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/admin/addReviews">Добавить</a>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

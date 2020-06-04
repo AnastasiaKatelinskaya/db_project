@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все для бани</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stil-n.itvertex.ru/style/dashboard.css">
+    <link rel="stylesheet" href="https://stil-n.itvertex.ru/style/style.css">
+    <script src="../script/dashboard.js"></script>
+    <script src="/script/admin.js?ver1.0"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">STIL-N.COM</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="/logout">Выход</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/admin/product/show_all">
+                            <span data-feather="home"></span>
+                            Товары <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/news/show_all">
+                            <span data-feather="file"></span>
+                            Новости
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/order/show_all">
+                            <span data-feather="file"></span>
+                            Заказы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/stat">
+                            <span data-feather="shopping-cart"></span>
+                            Статистика
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/slider/show/1">
+                            <span data-feather="users"></span>
+                            Настройки слайдера
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/reviews/show_all">
+                            <span data-feather="bar-chart-2"></span>
+                            Отзывы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/stocks">
+                            <span data-feather="layers"></span>
+                            Акции(боковое меню).
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/update">
+                            <span data-feather="layers"></span>
+                            Обновления
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+        {% block button %}{% endblock %}
+            <div>{% block body %}{% endblock %}</div>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body1 %}
+    <div class="container">
+        <h1>Новости</h1>
+        {% if news is defined %}
+        {% for new in news %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ new.title }}</h5>
+
+                <a href="/news/{{ new.id }}" class="card-link">Перейти на новость</a>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+            Извините, у нас временно нет новостей.
+        {% endif %}
+</div>
+{% endblock %}

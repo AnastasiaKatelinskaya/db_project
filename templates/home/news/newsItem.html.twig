@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body1 %}
+    <div class="container">
+        <h1>Новости</h1>
+        {% if news is defined %}
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.content }}</p>
+        {% else %}
+            Извините, новость временно не доступна...
+        {% endif %}
+    </div>
+{% endblock %}

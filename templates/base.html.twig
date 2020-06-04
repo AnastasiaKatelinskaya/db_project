@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все для бани</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="/slick/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/style/style.css?ver1.0">
+    <script src="/js/jquery-3.4.1.slim.min.js"></script>
+
+{#    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"#}
+{#            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"#}
+{#            crossorigin="anonymous"></script>#}
+
+    <script src="/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="/slick/slick/slick.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/js/main.js"></script>
+
+</head>
+<body>
+
+<div id="hamburgerMenu" style="width: 100%">
+    <div class="hamburger-menu col-1">
+        <input id="menu__toggle" type="checkbox"/>
+        <label onclick="hamburgerMenu()" class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+    </div>
+    <ul class="menu__box">
+        <hr>
+        <li><a id="mob_first_catalog" class="menu__item dropdown-toggle">Каталог</a></li>
+        <li id="mob_first_cat">
+            {% macro input(categories) %}
+                <ul id="mob_catalog_first" class="catalog_m" style="height: auto!important;">
+                    {% for item in categories %}
+                        {% if item.parent is null %}
+                            <li class="menu-item align-items-center">
+                                <a class="menu-item-link"
+                                   href='/catalog/{{ item.link }}'>{{ item.name }}</a>
+                                {% for subitem in categories %}
+                                    {% if subitem.parent.id is defined %}
+                                        {% if subitem.parent.id == item.id %}
+                                            <ul class="catalog_subcatalog">
+                                                {{ _self.test(categories,item) }}
+                                            </ul>
+                                        {% endif %} {% endif %}
+                                {% endfor  %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endmacro input %}
+
+            {% macro test(categories,item) %}
+            {% for subitem in categories %}
+            {% if (subitem.parent is null) or (item.id is not defined ) %}
+            {% else %}
+            {% if item %}
+            {% if subitem.parent.id == item.id %}
+        </li>
+        <li>
+            <a href="/catalog/{{ subitem.link }}">{{ subitem.name }}</a>
+            {{ _self.test(categories,subitem) }}
+        </li>
+
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endmacro test %}
+
+        {{ _self.input(site_title.categories) }}
+
+
+        <hr>
+        <li><a class="menu__item" href="/">Главная</a></li>
+        <li><a class="menu__item" href="/paymentAndDelivery">Оплата и доставка</a></li>
+        <li><a class="menu__item" href="/wholesalePrice">Оптовый прайс</a></li>
+        <li><a class="menu__item" href="/about">О нас</a></li>
+        <li><a class="menu__item" href="/news">Статьи и новости</a></li>
+        <li><a class="menu__item" href="/reviews">Отзывы</a></li>
+    </ul>
+</div>
+
+<header>
+    <div class="top_page_menu">
+        <div class="navbar navbar-expand-lg">
+
+            <a class="top_page_menu_title" href="/">
+                <h1 style="display: none">
+                    Деревянные изделия для дома и бани в Йошкар-Оле по оптовым и розничным ценам.
+                </h1>
+                <span class="top_page_menu_main_title">ДЕРЕВЯННЫЕ ИЗДЕЛИЯ</span><br>
+                <span class="top_page_menu_subtitle">ДЛЯ ДОМА И БАНИ</span>
+            </a>
+
+            <div class="collapse navbar-collapse top_page_menu_items">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">О нас<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">Статьи и Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reviews">Отзывы</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="top_page_menu_contacts my-2my-md-0">
+                <a id="phone_div" href="tel:+79877020829">
+                    <span class="top_page_menu_phone">
+                        <img class="top_page_menu_icon" id="my_phone_icon" src="/img/phone-icon.png">
+                        8 (927) 872-22-10
+                    </span>
+                </a>
+                <br class="lg_none_first">
+                <a id="mail_div" href="mailto:maximus13k@rambler.ru">
+                    <span class="top_page_menu_mail">
+                        <img class="top_page_menu_icon" id="my_mail_icon" src="/img/mail-icon.png">
+                        maximus13k@rambler.ru
+                    </span>
+                </a>
+                <br class="lg_none_second">
+                <a id="address_div" data-toggle="modal" data-target="#exampleModalCenter">
+                    <span class="top_page_menu_address">
+                        <img class="top_page_menu_icon" id="my_address_icon" src="/img/location-icon.png">
+                        г. Йошкар-Ола, ул. Пугачева д.1
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand main_menu row">
+        <div class="col-sm-3 col-md-2 col-lg-3 main_menu_catalog" id="catalog_div">
+            <a class="navbar-brand" href="#">
+                <span class="hide_help_menu_text">
+                    КАТАЛОГ
+                </span>
+                <img class="main_menu_icon" id="arrow_catalog_icon" src="/img/arrow-bottom-icon.png">
+            </a>
+        </div>
+
+        <div onclick="hamburgerMenu()" class="col-2 main_menu mobile_menu" id="catalog_div">
+            <a class="navbar-brand" href="#">
+
+                <img class="mobile_menu_icon" id="arrow_catalog_icon" src="/img/mobile-menu.png">
+                <span>
+                    МЕНЮ
+                </span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse main_menu_items" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active none_mobile_menu_item">
+                    <a class="nav-link" href="/">
+                        ГЛАВНАЯ
+                    </a>
+                </li>
+                <li class="nav-item none_mobile_menu_item">
+                    <a class="nav-link" href="/paymentAndDelivery">
+                        ОПЛАТА И ДОСТАВКА
+                    </a>
+                </li>
+                <li class="nav-item none_mobile_menu_item">
+                    <a class="nav-link" href="/wholesalePrice">
+                        ОПТОВЫЙ ПРАЙС
+                    </a>
+                </li>
+                <li class="nav-item dropdown help_menu_item none_mobile_menu_item">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        ЕЩЁ
+                    </a>
+                    <div class="dropdown-menu my_dropdown_menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="/about">
+                            О НАС
+                        </a>
+                        <a class="dropdown-item" href="/news">
+                            СТАТЬИ И НОВОСТИ
+                        </a>
+                        <a class="dropdown-item" href="/reviews">
+                            ОТЗЫВЫ
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div onclick="_getDetails()"  class="col-sm-2 col-md-1 col-lg-3 my-sm-0 main_menu_card_wrapper"
+             id="shopping_card_div"
+             data-toggle="modal" data-target="#exampleModalScrollable">
+            <img class="main_menu_card_icon" id="shopping_card_icon"
+                 src="/img/cart-icon.png">
+            {#            <span class="cart_badge">#}
+            {#                    9#}
+            {#                </span>#}
+            <span class="navbar-brand">
+
+                <a><span class="hide_help_menu_text hide_shopping_card">
+                    КОРЗИНА
+                </span></a>
+            </span>
+        </div>
+    </nav>
+</header>
+
+<main role="main">
+
+    <!--Выдвижной каталог-->
+    <div class="col-lg-3 col-md-4 menu-1 catalog_full_container_width" id="md_navbar" style="display: none">
+        {% macro input(categories) %}
+            <ul id="navbar" class="catalog" style="height: auto!important;">
+                {% for item in categories %}
+                    {% if item.parent is null %}
+                        <li class="menu-item align-items-center">
+                            <a class="menu-item-link"
+                               href='/catalog/{{ item.link }}'>{{ item.name }}</a>
+                            {% for subitem in categories %}
+                                {% if subitem.parent.id is defined %}
+                                    {% if subitem.parent.id == item.id %}
+                                        <ul class="catalog_subcatalog">
+                                            {{ _self.test(categories,item) }}
+                                        </ul>
+                                    {% endif %} {% endif %}
+                            {% endfor  %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endmacro input %}
+
+        {% macro test(categories,item) %}
+            {% for subitem in categories %}
+                {% if (subitem.parent is null) or (item.id is not defined ) %}
+                {% else %}
+                    {% if item %}
+                        {% if subitem.parent.id == item.id %}
+                            </li>
+                            <li>
+                                <a href="/catalog/{{ subitem.link }}">{{ subitem.name }}</a>
+                                {{ _self.test(categories,subitem) }}
+                            </li>
+
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endmacro test %}
+
+        {{ _self.input(site_title.categories) }}
+
+    </div>
+
+    {% block body %}{% endblock %}
+    {% block body1 %}{% endblock %}
+    {% block wholesalePrice %}{% endblock %}
+
+</main>
+<!-- FOOTER -->
+<footer class="container_fluid foo_wrapper">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+            <h5>Адрес местонахождения предприятия:</h5>
+            <p><b><u>г.Йошкар-Ола, ул. Пугачева, 1, лит Е
+                    </u></b></p>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f0dae4dfaee4bab41db3832905be8cf8bed09cd393432f303d56c1091f51389&amp;source=constructor"
+                    width="100%" height="300" frameborder="0"></iframe>
+        </div>
+        <hr class="md_hr">
+        <div class="col-lg-3 col-md-6 col-12">
+            <h5>Адрес для почты:</h5>
+            <p>Республика Марий Эл, 424005 г.Йошкар-Ола, ул. Мира, 62</p>
+            <hr class="sm_hr">
+            <h5>Контактная информация:</h5>
+            <p><b>Телефон: <a href="tel:+79877020829" style="color: #5a5a5a"><u>8(927)872-36-14</u></a></b></p>
+            <p><b>E-mail: <a href="mailto:maximus13k@rambler.ru" style="color: #5a5a5a"><u>maximus13k@rambler.ru</u></a></b>
+            </p>
+        </div>
+        <hr class="sm_hr">
+        <div class="col-lg-3 col-md-6 col-12">
+            <h5>Реквизиты:</h5>
+            <p><b>Наименование для платежных документов: </b>ИП Карчикян Иветта Эдуардовна</p>
+            <p><b>ИНН</b> 120704995380</p>
+            <p><b>ОГРНИП</b> 309121814600010</p>
+            <p><b>Р/С</b> 40802810552020000070<!-- в ОАО<br>«АК БАРС» Банк Марийский филиал</p>-->
+            <p><b>К/С</b> 30101810000000000805</p>
+            <p><b>БИК</b> 049205805</p>
+        </div>
+    </div>
+
+    <hr style="display: block; width: 100%;">
+
+    <div class="row">
+        <div class="col-lg-7 col-12">
+            <p class="small_strong_shrift">
+                Данный интернет-сайт носит исключительно
+                информационный
+                характер и ни при каких
+                условиях не является публичной офертой, определяемой положениями пункта 1 статьи 437 Гражданского
+                кодекса
+                Российской Федерации. Для получения подробной информации о наличии и стоимости указанных товаров и (или)
+                услуг,
+                пожалуйста, обращайтесь на maximus13k@rambler.ru.</p>
+        </div>
+        <hr class="md_hr">
+        <div class="col-12 col-lg-5"
+             style="align-content: center; text-align: center; justify-content: center; vertical-align: middle">
+            © Copyrights ITВершина. Все права защищены 2020<br>
+            г.Йошкар-Ола, Россия. contact@itvertex.ru
+        </div>
+    </div>
+
+</footer>
+
+<div class="to_top" id="to_top">
+    <p class="float-right help_div"><a href="#" class="help_font">НАВЕРХ</a></p>
+</div>
+
+<!-- Modal карта-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Карта проезда</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f0dae4dfaee4bab41db3832905be8cf8bed09cd393432f303d56c1091f51389&amp;source=constructor"
+                        width="100%" height="400" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <form name="test" method="post">
+            <div class="modal-content">
+                <div id="basket_" onclick="_getDetails()" class="modal-header modal_card_header">
+                    <span class="modal-title model_card_title">Корзина</span>
+                    <button type="button" class="close close_modal_card" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body card_modal_body">
+                    <div class="js_basket">
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer modal_card_footer">
+                    <div class="row full_width_card_block">
+                        <div class="form-group row card_input">
+                            <label class="card_form_label col-4 col-md-3" for="phone">Телефон</label>
+                            <input type="tel" name="phone" id="phoneBasket"
+                                   placeholder="8(XXX)XXX-XX-XX"
+                                   required
+                                   class="form-control card_input_item bfh-phone col-8 col-md-9"/>
+                        </div>
+                        <div class="form-group row card_input">
+                            <label class="card_form_label col-4 col-md-3"
+                                   for="exampleFormControlInput1">Почта</label>
+                            <input type="email" class="form-control card_input_item col-8 col-md-9"
+                                   id="emailBasket"
+                                   placeholder="name@example.com">
+                        </div>
+
+                        <div class="row full_width_card_block">
+                            <div class="custom-control custom-checkbox col-12 col-md-7">
+                                <input onclick="checkedBasket()" type="checkbox" class="custom-control-input"
+                                       id="save-info">
+                                <label class="custom-control-label" for="save-info" style="font-size: 12px">Настоящим
+                                    подтверждаю, что я
+                                    ознакомлен и согласен с <a href="/policy">политикой обработки персональных
+                                        данных</a></label>
+                            </div>
+                            <button disabled id="buttonBasket" onclick="sendBasket()" type="button"
+                                    class="btn btn-primary send_product_card col-12 col-md-5">Отправить заказ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<!-- Modal корзина-->
+<!--<div id="preloader"></div>-->
+
+
+{#<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"#}
+{#        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"#}
+{#        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"#}
+{#        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>#}
+{#<script type="text/javascript" src="/slick/slick/slick.js"></script>#}
+
+<script>
+    function _getDetails() {
+
+        $.ajax({
+            method: 'POST',
+            url: "/basket"
+        }).done(function (data) {
+            $('.js_basket').html(data);
+        });
+    }
+
+</script>
+<script src="/js/test.js?ver1.0"></script>
+{#<!-- Yandex.Metrika counter -->#}
+{#<script type="text/javascript" >#}
+{#    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};#}
+{#        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})#}
+{#    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");#}
+
+{#    ym(58948120, "init", {#}
+{#        clickmap:true,#}
+{#        trackLinks:true,#}
+{#        accurateTrackBounce:true,#}
+{#        webvisor:true#}
+{#    });#}
+{#</script>#}
+{#<noscript><div><img src="https://mc.yandex.ru/watch/58948120" style="position:absolute; left:-9999px;" alt="" /></div></noscript>#}
+{#<!-- /Yandex.Metrika counter -->#}
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+    {{ form_start(form, {attr: {class: 'needs-validation'}}) }}
+    <div id="registration_card">
+        <div class="shadow-card login_registration_card_padding">
+            <div class="text-center">
+                <img src="images/cliclishop.png" width="70">
+                <h4 class="font-weight-normal login_registration_title">
+                    Регистрация в CliCliShop
+                </h4>
+            </div>
+
+            <div class="registration_steps text-center" style="height: 40px">
+                <div id="firstRegStep" onclick="changeRegistrationStep($(this))" style="border: 1px solid #02074B"
+                     class="registration_step active">
+                    <div class="sub_reg_step">
+                        <div class="sub_sub_reg_step">
+                        </div>
+                    </div>
+                </div>
+                <div id="secondRegStep" onclick="changeRegistrationStep($(this))" class="registration_step">
+                    <div class="sub_reg_step">
+                        <div class="sub_sub_reg_step">
+                        </div>
+                    </div>
+                </div>
+                <div id="thirdRegStep" onclick="changeRegistrationStep($(this))" class="registration_step">
+                    <div class="sub_reg_step">
+                        <div class="sub_sub_reg_step">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="firstRegForm">
+
+                <div class="mb-2">
+                    <label for="initials" class="login_registration_label">ФИО</label>
+                    <input name="name" type="text" class="form-control" id="initials" placeholder="Иванов Иван Иванович" value="">
+                    <div class="invalid-feedback">
+                        Valid initials are required.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="email" class="login_registration_label">Email</label>
+                    {{ form_row(form.email, {attr: {class: 'form-control', id: 'email', placeholder: 'contact@cliclishop.ru'} }) }}
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="" class="login_registration_label">Номер телефона</label>
+                    <input class="form-control" placeholder="+79996660000">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="inputPassword" class="login_registration_label">Пароль</label>
+                    {{ form_row(form.password.first, {attr: {class: 'form-control', id: 'inputPassword', placeholder: ''} }) }}
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputPassword" class="login_registration_label">Повторите пароль</label>
+                    {{ form_row(form.password.second, {attr: {class: 'form-control', id: 'inputPassword', placeholder: ''} }) }}
+                </div>
+
+                <div class="text-left checkbox mb-2">
+                    <label>
+                        <input type="checkbox" id="checkbox_check_reg" value="remember-me"> Я согласен с условиями <a href="">Пользовательского
+                            соглашения</a>
+                    </label>
+                </div>
+                <!--type="submit"-->
+                <div  class="btn btn-primary btn-lg btn-block" id="reg_step_1"
+                        onclick="changeRegistrationStep($('#secondRegStep')); stageSuccessfulCompletion($('#firstRegStep'))">
+                    Далее
+                </div>
+
+            </div>
+
+
+
+
+                <button  class="btn btn-primary btn-lg btn-block" type="submit" onclick="showSucsessReg()">
+                    Зарегистрироваться
+                </button>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    {#    <div class="toast" style="position: absolute; top: 10px; right: 10px;" data-delay="2000">#}
+    {#        <div class="toast-header">#}
+    {#            <img src="images/cliclishop.png" style="width: 20px" class="rounded mr-2" alt="...">#}
+    {#            <strong class="mr-auto">CliCliShop</strong>#}
+    {#            <small></small>#}
+    {#            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">#}
+    {#                <span aria-hidden="true">&times;</span>#}
+    {#            </button>#}
+    {#        </div>#}
+    {#        <div class="toast-body">#}
+    {#            Регистрация прошла успешно#}
+    {#        </div>#}
+    {#    </div>#}
+    {{ form_end(form) }}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все для бани</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stil-n.itvertex.ru/style/dashboard.css">
+    <link rel="stylesheet" href="https://stil-n.itvertex.ru/style/style.css">
+    <script src="../script/dashboard.js"></script>
+    <script src="/script/admin.js?ver1.0"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="container row">
+
+    <div class="col-6"></div>
+    <form class="form-signin" method="post">
+{#        {% if error %}#}
+{#            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#        {% endif %}#}
+
+
+        <div id="login_card">
+            <div class="shadow-card login_registration_card_padding">
+                <div class="text-center">
+
+                    <h3 class="font-weight-normal login_registration_title">Вход в STIL-N.COM</h3>
+                </div>
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="inputEmail" class="login_registration_label">Email</label>
+                        <input type="email" name="email" id="inputEmail" class="form-control"
+                               placeholder="example@gmail.com"
+                               required="" autofocus="">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPassword" class="login_registration_label">Пароль</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder=""
+                               required="">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Войти</button>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                </form>
+
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+</body>
+</html>
+
+
+

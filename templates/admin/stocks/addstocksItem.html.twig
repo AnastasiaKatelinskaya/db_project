@@ -1,0 +1,43 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <div class="row">
+
+        <div class="col-6">
+            <h3>Изменение информации</h3>
+            {{ form_start(formStocks) }}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Загрузить</span>
+                </div>
+                <div class="custom-file">
+                    {{ form_row(formStocks.image, {attr: {class: 'custom-file-input'} }) }}
+                    {#                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">#}
+                    <label class="custom-file-label" for="inputGroupFile01">Загрузите изображение</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Введите название акции (кратко)</label>
+                {{ form_row(formStocks.title, {attr: {class: 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Введите описание акции</label>
+                {#                <textarea id="products_content" name="content" required="required" class="form-control" >{{ products.content }}</textarea>#}
+                {{ form_row(formStocks.content, {attr: {class: 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Введите ссылку, на которую будет вести кнопка "Перейти"</label>
+                {{ form_row(formStocks.link, {attr: {class: 'form-control'} }) }}
+            </div>
+
+
+
+            {{ form_row(formStocks.submit, {attr: {class: 'btn btn-primary'} }) }}
+            {{ form_end(formStocks) }}
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block button %}
+
+{% endblock %}

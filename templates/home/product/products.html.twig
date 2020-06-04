@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <div class="main_page_product_category_title" style="padding: 50px 0; align-content: center; text-align: center;">
+
+    </div>
+    <div class="row row_products_list row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+
+        {% if products is defined %}
+            {% for product in products %}
+                <div class="col mb-4">
+                    <div class="card h-100" style="">
+                        <div class="products_list_img media">
+                            <img src="{{ product.image }}" class="card-img-top products_list_img_top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.title }}</h5>
+                            <!--<p class="card-text">{{ product.content }}</p>-->
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="main_page_product_categor_price">{% if product.price == 0 %}
+                                    Цена не указана
+                                    {% else %}
+                                    от {{ product.price }}руб.
+        {% endif %}
+                                </span>
+                            </li>
+                        </ul>
+                        <div><a href="/catalog/{{ product.category.link}}/product/{{ product.id }}" style="color: white">
+                            <button class="btn btn-primary card_button" type="submit">
+                                Подробнее
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            Извините, у нас временно нет продуктов данной категории.
+        {% endif %}
+    </div>
+{% endblock %}
